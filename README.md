@@ -7,6 +7,7 @@
 <li>ASP.NET Core 5</li>
 <li>Entity Framework Core</li>
 <li>Identity Framework Core</li>
+<li>Fluent Validation</li>
 <li>Arquitetura em camadas</li>
 <li>Injeção de Dependência</li>
 </ul>
