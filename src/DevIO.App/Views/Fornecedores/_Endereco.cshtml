@@ -1,0 +1,44 @@
+﻿@model DevIO.App.ViewModels.FornecedorViewModel
+
+<div class="form-group ">
+    <label asp-for="Endereco.Cep" class="control-label"></label>
+    <input asp-for="Endereco.Cep" class="form-control" aria-describedby="helpCep" placeholder="75400000" />
+    <small id="helpCep" class="text-muted alert-info">
+        Apenas números.
+    </small>
+    <span asp-validation-for="Endereco.Cep" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Endereco.Logradouro" class="control-label"></label>
+    <input asp-for="Endereco.Logradouro" class="form-control" placeholder="Digite seu endereço" />
+    <span asp-validation-for="Endereco.Logradouro" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Endereco.Numero" class="control-label">Número</label>
+    <input asp-for="Endereco.Numero" class="form-control" placeholder="00" />
+    <span asp-validation-for="Endereco.Numero" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Endereco.Complemento" class="control-label"></label>
+    <input asp-for="Endereco.Complemento" class="form-control" placeholder="Apartamento 49" />
+    <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
+    <small id="helpCep" class="text-muted">
+        Opcional
+    </small>
+</div>
+<div class="form-group">
+    <label asp-for="Endereco.Bairro" class="control-label"></label>
+    <input asp-for="Endereco.Bairro" class="form-control" placeholder="Digite seu bairro" />
+    <span asp-validation-for="Endereco.Bairro" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Endereco.Cidade" class="control-label"></label>
+    <input asp-for="Endereco.Cidade" class="form-control" placeholder="Digite sua cidade" />
+    <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Endereco.Estado" class="control-label"></label>
+    <input asp-for="Endereco.Estado" class="form-control" placeholder="Digite seu Estado" />
+    <span asp-validation-for="Endereco.Estado" class="text-danger"></span>
+</div>
+

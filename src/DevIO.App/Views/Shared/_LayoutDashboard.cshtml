@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/dashboard.css" rel="stylesheet" />
+    <link href="~/css/sb-admin.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/lib/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet" />
+
+
+    <title>Dashboard</title>
+</head>
+<body class="bg-dark fixed-nav sticky-footer" id="page-top">
+
+
+    <!-- Abrindo Navbar !-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
+
+        <a class="navbar-brand text-uppercase" href="#">
+            BuscaIMEI
+        </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Navegação Toggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbar" class="collapse navbar-collapse">
+
+            <ul class="navbar-nav navbar-sidenav">
+                <li class="nav-item">
+                    <a class="nav-link mt-lg-2 mb-lg-3" href="@Url.Action("Index", "Dashboard")">
+                        <i class="fas fa-tachometer-alt h5"></i>
+                        <span class="nav-link-text h4">Painel do Usuário</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Cadastro", "Dispositivo")">
+                        <i class="fas fa-mobile-alt h6"></i>
+                        <span class="nav-link-text h6">Registrar Aparelho</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Busca", "Dispositivo")">
+                        <i class="fas fa-search h6"></i>
+                        <span class="nav-link-text h6">Buscar Aparelho</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("CadastroDispositivoEncontrado", "DispositivoEncontrado")">
+                        <i class="fas fa-handshake h6"></i>
+                        <span class="nav-link-text h6">Econtrei um Aparelho</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://raivirtual.ssp.go.gov.br/#/" target="_blank">
+                        <i class="fas fa-file h6"></i>
+                        <span class="nav-link-text h6">Registrar BO-Online</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Configuracao", "Dashboard")">
+                        <i class="fas fa-cogs h6"></i>
+                        <span class="nav-link-text h6">Configuração</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a id="sidenavToggler" class="nav-link text-center" href="#">
+                        <i class="fas fa-arrow-left h6"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand text-uppercase " href="#">
+                        Olá @User.Identity.Name!
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <span>
+                        <a class="nav-link" asp-action="Index" asp-controller="Home">
+                            <i class="fas fa-sign-out-alt mx-5">
+                                Sair
+                            </i>
+                        </a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Fechando Navbar !-->
+    <!-- Comecando rodape !-->
+    <footer class="sticky-footer bg-dark">
+        <div class="container">
+            <div class="text-center">
+                @RenderBody()
+            </div>
+        </div>
+    </footer>
+    <!-- terminando rodape !-->
+
+
+    <script src="~/lib/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="~/js/site.min.js"></script>
+    <script src="~/js/sb-admin-datatables.min.js"></script>
+    <script src="~/js/sb-admin-charts.min.js"></script>
+    <script src="~/js/sb-admin.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    @RenderBody()
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

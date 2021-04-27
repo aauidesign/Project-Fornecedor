@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DevIO.App.ViewModels.FornecedorViewModel>
+@using DevIO.App.Extensions
+
+<table class="table shadow p-3 rounded">
+    <thead class="table-light bg-light rounded" style="color:#3f3593">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                CNPJ/CPF
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody class="bg-white">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @this.FormataDocumento(item.TipoFornecedor, item.Documento)
+                </td>
+                <td>
+                    @if (item.Ativo == true)
+                    {
+                        <div class="shadow-sm" style="background-color:#4f794e; text-align:center; border-radius:25px; color:aliceblue">
+                            <small>ATIVO</small>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="shadow-sm" style="background-color:#b25454; text-align:center; border-radius:25px; color:aliceblue">
+                            <small>INATIVO</small>
+                        </div>
+                    }
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-group btn-light shadow p-3 bg-white rounded" style="width:50px; height:50px" asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-search text-info"></i></a>
+                    <a class="btn btn-group btn-light shadow p-3 bg-white rounded" style="width:50px; height:50px" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pen text-warning"></i></a>
+                    <a class="btn btn-group btn-light shadow p-3 bg-white rounded" style="width:50px; height:50px" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash text-danger"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

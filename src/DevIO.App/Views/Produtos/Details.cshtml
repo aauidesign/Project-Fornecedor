@@ -1,0 +1,74 @@
+﻿@model DevIO.App.ViewModels.ProdutoViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<h1 class="text-center text-secondary">@ViewData["Title"] </h1>
+
+<div>
+    <div class="card-header mt-3 text-secondary mb-3  font-weight-bold">Dados Produto</div>
+    <div class="row">
+
+        <div class="col-5">
+            <img src="~/imagens/@Model.Imagem" alt="@Model.Imagem" style=" width:100%" />
+        </div>
+
+        <div class="col-md-7">
+            <dl>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Descricao)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Valor)
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.Valor.ToString("C")
+                </dd>
+                <dt class="col-sm-2">
+                    Status
+                </dt>
+                <dd class="col-sm-10">
+                    @if (Model.Ativo == true)
+                    {
+                        <div class="shadow-sm" style="background-color:#4f794e; text-align:center; border-radius:25px; color:aliceblue; width:20%;">
+                            <small>ATIVO</small>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="shadow-sm" style="background-color:#b25454; text-align:center; border-radius:25px; color:aliceblue; width:20%;">
+                            <small>INATIVO</small>
+                        </div>
+                    }
+                </dd>
+                <dt class="col-sm-2">
+                    @if (Model.Fornecedor.Documento.Length == 11)
+                    {
+                        <h6>CPF</h6>
+                    }
+                    else
+                    {
+                        <h6>CNPJ</h6>
+                    }
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Fornecedor.Documento)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="card-footer">
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a class="btn" href="javascript:window.history.back();">Voltar</a>
+</div>

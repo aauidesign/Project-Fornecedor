@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DevIO.App.ViewModels.ProdutoViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+
+<div class="form-inline mt-5 p-3">
+    <h3 style="color:#6E64C3">@ViewData["Title"]</h3>
+    <a class="btn btn-primary shadow rounded ml-auto" asp-action="Create"><i class="fas fa-plus-circle"></i> Novo Produto</a>
+</div>
+
+<div class="row">
+    <div class="container">
+        <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Pesquisar" aria-label="Pesquisar"
+                   aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="#">
+                <i class="fas fa-search" style="color:#6E64C3"></i>
+            </span>
+        </div>
+    </div>
+</div>
+
+<partial name="_ListaProdutos" />
