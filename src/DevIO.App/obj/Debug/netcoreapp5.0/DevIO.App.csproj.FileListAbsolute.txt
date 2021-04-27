@@ -482,3 +482,4 @@ C:\Dev\MinhaAppMvcCompleta\src\DevIO.App\obj\Debug\netcoreapp5.0\Razor\Views\For
 C:\Dev\MinhaAppMvcCompleta\src\DevIO.App\bin\Debug\netcoreapp5.0\appsettings.Production.json
 C:\Dev\MinhaAppMvcCompleta\src\DevIO.App\bin\Debug\netcoreapp5.0\appsettings.Staging.json
 C:\Dev\MinhaAppMvcCompleta\src\DevIO.App\bin\Debug\netcoreapp5.0\FluentValidation.dll
+C:\Dev\MinhaAppMvcCompleta\src\DevIO.App\obj\Debug\netcoreapp5.0\Razor\Views\Shared\Components\Summary\Default.cshtml.g.cs
