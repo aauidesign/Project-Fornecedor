@@ -41,6 +41,8 @@ namespace DevIO.Data.Mappings
 
             builder.ToTable("Enderecos");
 
+            
+
         }
     }
 }

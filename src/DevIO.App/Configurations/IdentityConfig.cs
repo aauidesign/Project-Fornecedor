@@ -22,7 +22,18 @@ namespace DevIO.App.Configurations
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = false; //confirmação de email
+                options.SignIn.RequireConfirmedEmail = false; //confirmação de email
+                options.Password.RequireDigit = false; //numero
+                options.Password.RequiredLength = 6; //tamanho min
+                options.Password.RequireNonAlphanumeric = false; //caracter especial
+                options.Password.RequireUppercase = false; //letra maiuscula,
+                options.Password.RequireLowercase = false; //letra minuscula
+
+            })
+
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             return services;

@@ -108,14 +108,14 @@ namespace DevIO.App.Controllers
         public async Task<IActionResult> Delete(Guid id)
         {
 
-            var fornecedor = await ObterFornecedorEndereco(id);
+            var fornecedorViewModel = await ObterFornecedorEndereco(id);
 
-            if (fornecedor == null)
+            if (fornecedorViewModel == null)
             {
                 return NotFound();
             }
 
-            return View(fornecedor);
+            return View(fornecedorViewModel);
         }
 
         [HttpPost, ActionName("Delete")]
