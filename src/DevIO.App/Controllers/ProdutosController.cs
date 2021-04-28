@@ -34,7 +34,6 @@ namespace DevIO.App.Controllers
             _produtoService = produtoService;
         }
 
-
         [Route("lista-de-produtos")]
         public async Task<IActionResult> Index()
         {
@@ -66,7 +65,6 @@ namespace DevIO.App.Controllers
 
         [ClaimsAuthorize("Produto", "Adicionar")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [Route("novo-produto")]
         public async Task<IActionResult> Create(ProdutoViewModel produtoViewModel)
         {
@@ -163,7 +161,6 @@ namespace DevIO.App.Controllers
 
         [ClaimsAuthorize("Produto", "Excluir")]
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         [Route("excluir-produto/{id:guid}")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
