@@ -1,122 +1,54 @@
 ﻿<!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <link href="~/css/dashboard.css" rel="stylesheet" />
-    <link href="~/css/sb-admin.min.css" rel="stylesheet" />
-    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/lib/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet" />
-
-
-    <title>Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DevIO.App</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
 </head>
-<body class="bg-dark fixed-nav sticky-footer" id="page-top">
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/svg/visual-studio.svg" alt="Alternate Text" style="width:50px;height:50px" /></a>
 
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- Abrindo Navbar !-->
-
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
-
-        <a class="navbar-brand text-uppercase" href="#">
-            BuscaIMEI
-        </a>
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar"
-                aria-controls="navbar" aria-expanded="false" aria-label="Navegação Toggle">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div id="navbar" class="collapse navbar-collapse">
-
-            <ul class="navbar-nav navbar-sidenav">
-                <li class="nav-item">
-                    <a class="nav-link mt-lg-2 mb-lg-3" href="@Url.Action("Index", "Dashboard")">
-                        <i class="fas fa-tachometer-alt h5"></i>
-                        <span class="nav-link-text h4">Painel do Usuário</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Cadastro", "Dispositivo")">
-                        <i class="fas fa-mobile-alt h6"></i>
-                        <span class="nav-link-text h6">Registrar Aparelho</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Busca", "Dispositivo")">
-                        <i class="fas fa-search h6"></i>
-                        <span class="nav-link-text h6">Buscar Aparelho</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("CadastroDispositivoEncontrado", "DispositivoEncontrado")">
-                        <i class="fas fa-handshake h6"></i>
-                        <span class="nav-link-text h6">Econtrei um Aparelho</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://raivirtual.ssp.go.gov.br/#/" target="_blank">
-                        <i class="fas fa-file h6"></i>
-                        <span class="nav-link-text h6">Registrar BO-Online</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Configuracao", "Dashboard")">
-                        <i class="fas fa-cogs h6"></i>
-                        <span class="nav-link-text h6">Configuração</span>
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav sidenav-toggler">
-                <li class="nav-item">
-                    <a id="sidenavToggler" class="nav-link text-center" href="#">
-                        <i class="fas fa-arrow-left h6"></i>
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="navbar-brand text-uppercase " href="#">
-                        Olá @User.Identity.Name!
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <span>
-                        <a class="nav-link" asp-action="Index" asp-controller="Home">
-                            <i class="fas fa-sign-out-alt mx-5">
-                                Sair
-                            </i>
-                        </a>
-                    </span>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- Fechando Navbar !-->
-    <!-- Comecando rodape !-->
-    <footer class="sticky-footer bg-dark">
-        <div class="container">
-            <div class="text-center">
-                @RenderBody()
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Fornecedores" asp-action="Index">Fornecedor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Produtos" asp-action="Index">Produto</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="bg-light pb-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - App Fornecedor MVC CORE - E-mail: <email>allex</email>
         </div>
     </footer>
-    <!-- terminando rodape !-->
 
-
-    <script src="~/lib/jquery-easing/jquery.easing.min.js"></script>
-    <script src="~/lib/jquery/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="~/js/site.min.js"></script>
-    <script src="~/js/sb-admin-datatables.min.js"></script>
-    <script src="~/js/sb-admin-charts.min.js"></script>
-    <script src="~/js/sb-admin.min.js"></script>
-    <script src="~/js/site.js"></script>
-
-    @RenderBody()
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
